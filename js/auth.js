@@ -1,7 +1,7 @@
 let isLoginMode = false;
 
 window.onload = () => { 
-    if(getState().isLoggedIn) window.location.href = 'pages/trilha.html'; 
+    if(getState().isLoggedIn) window.location.href = 'Pages/trilha.html'; 
 }
 
 function toggleAuthMode() {
@@ -52,5 +52,25 @@ function handleAuth(event) {
     
     // Salva tudo no banco de dados do navegador e redireciona
     saveState(state);
-    window.location.href = 'pages/trilha.html';
+    
+    // Tocar o som do Bem-te-vi
+    const audio = new Audio('utils/bemteviaudio.mp3');
+    try {
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                // Aguarda um momento para o som tocar antes de redirecionar
+                setTimeout(() => {
+                    window.location.href = 'Pages/trilha.html';
+                }, 2000);
+            }).catch(() => {
+                // Se falhar (ex: bloqueio do navegador), redireciona imediatamente
+                window.location.href = 'Pages/trilha.html';
+            });
+        } else {
+            window.location.href = 'Pages/trilha.html';
+        }
+    } catch (e) {
+        window.location.href = 'Pages/trilha.html';
+    }
 }

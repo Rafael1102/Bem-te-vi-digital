@@ -138,18 +138,13 @@ a {
 }
 
 .auth-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100vh;
-    background-color: var(--bg-gray);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-    padding: 20px;
-    overflow-y: auto;
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background-color: var(--bg-gray);
 }
 
 .auth-card {
@@ -309,11 +304,14 @@ a {
     background-color: var(--white);
     width: 90%;
     max-width: 500px;
-    max-height: 90vh;
+    max-height: 85vh;
     overflow-y: auto;
     border-radius: 20px;
     padding: 30px;
     text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .units-list {

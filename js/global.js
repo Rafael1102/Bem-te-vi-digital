@@ -41,22 +41,53 @@ function setupScrollToBottomButton() {
         '</svg>';
     btn.setAttribute('title', 'Ir para o final');
 
+    // tentar resolver caminho do áudio dependendo da estrutura de pastas (Pages/ vs root)
+    let audioSrc = 'utils/bemteviaudio.mp3';
+    try {
+        const path = window.location.pathname || '';
+        if (path.includes('/Pages/') || path.includes('\\Pages\\')) {
+            audioSrc = '../utils/bemteviaudio.mp3';
+        } else {
+            audioSrc = 'utils/bemteviaudio.mp3';
+        }
+    } catch (e) {
+        audioSrc = 'utils/bemteviaudio.mp3';
+    }
+
+    const clickAudio = new Audio(audioSrc);
+    clickAudio.preload = 'auto';
+
     btn.addEventListener('click', () => {
+        // tocar áudio (não bloquear a rolagem caso falhe)
+        try {
+            const playPromise = clickAudio.play();
+            if (playPromise && playPromise.catch) playPromise.catch(() => {});
+        } catch (e) {}
+
         window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
     });
 
     document.body.appendChild(btn);
 
+    let isUpdating = false;
     const checkVisibility = () => {
-        const docHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
-        const viewHeight = window.innerHeight || document.documentElement.clientHeight;
-        const nearBottom = (window.scrollY + viewHeight) >= (docHeight - 80);
+        if (isUpdating) return;
+        window.requestAnimationFrame(() => {
+            isUpdating = true;
+            try {
+                const docHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+                const viewHeight = window.innerHeight || document.documentElement.clientHeight;
+                const nearBottom = (window.scrollY + viewHeight) >= (docHeight - 80);
 
-        if (docHeight > viewHeight + 80 && !nearBottom) {
-            btn.classList.add('visible');
-        } else {
-            btn.classList.remove('visible');
-        }
+                if (docHeight > viewHeight + 80 && !nearBottom) {
+                    if (!btn.classList.contains('visible')) btn.classList.add('visible');
+                } else {
+                    if (btn.classList.contains('visible')) btn.classList.remove('visible');
+                }
+            } finally {
+                isUpdating = false;
+            }
+        });
     };
 
     window.addEventListener('resize', checkVisibility);
@@ -64,9 +95,25 @@ function setupScrollToBottomButton() {
 
     // checar após carregamento de imagens e ao final do carregamento inicial
     window.addEventListener('load', checkVisibility);
+    
+    let mutationTimeout;
     // MutationObserver para detectar mudanças de conteúdo dinâmico
-    const observer = new MutationObserver(() => checkVisibility());
-    observer.observe(document.body, { childList: true, subtree: true, attributes: true, characterData: true });
+    const observer = new MutationObserver((mutations) => {
+        // Evita loop infinito caso a mudança seja no próprio botão
+        let isOnlyBtn = true;
+        for (let m of mutations) {
+            if (m.target !== btn && !btn.contains(m.target)) {
+                isOnlyBtn = false;
+                break;
+            }
+        }
+        if (isOnlyBtn) return;
+
+        clearTimeout(mutationTimeout);
+        mutationTimeout = setTimeout(checkVisibility, 150);
+    });
+    // Remove attributes: true para evitar thrashing em mudanças de estilo normais
+    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
 
     // chamada inicial
     setTimeout(checkVisibility, 120);
