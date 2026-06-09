@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardião Digital - Atividade</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="activity-page">
+    <div class="activity-container">
+        <a href="trilha.html" class="activity-back">← Voltar para a Trilha</a>
+        <p id="module-label" class="activity-module-label"></p>
+        <h1 id="unit-title" class="activity-title">Carregando...</h1>
+        <p id="unit-desc" class="activity-desc"></p>
+
+        <div class="activity-progress">
+            <span id="progress-text">Pergunta 1 de 3</span>
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <div id="score-panel" class="score-panel">
+            <span class="score-label">Pontos</span>
+            <span id="live-score" class="score-value">0</span>
+        </div>
+
+        <div id="activity-area" class="activity-area"></div>
+
+        <button id="finish-btn" class="btn" onclick="finishUnit()" style="display: none;">
+            Concluir e Voltar para a Trilha
+        </button>
+    </div>
+
+    <div id="celebration-overlay" class="celebration-overlay" aria-hidden="true">
+        <div class="celebration-content">
+            <div class="celebration-logo-wrap">
+                <img src="../avata/Bem-te-vi_jeday.jpeg" alt="Bem-te-vi Digital" class="celebration-logo">
+                <div class="celebration-glow"></div>
+            </div>
+            <p class="celebration-title">Bem-te-vi Digital</p>
+            <p class="celebration-subtitle">Contando seus acertos...</p>
+            <ul id="points-breakdown" class="points-breakdown"></ul>
+            <div id="total-points" class="total-points">0 pontos</div>
+        </div>
+    </div>
+
+    <script src="../js/global.js"></script>
+    <script src="../js/atividades.js"></script>
+    <script src="../js/conteudo.js"></script>
+</body>
+</html>

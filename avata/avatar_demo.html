@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatares Duolingo Animados</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        
+        .avatars-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .avatar-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .avatar-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .avatar-card h2 {
+            margin-top: 20px;
+            color: #333;
+            font-size: 1.5em;
+        }
+        
+        .avatar-display {
+            width: 180px;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+        }
+        
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .features {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+        
+        .features h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .features ul {
+            list-style: none;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .features li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .code-section {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        
+        .code-section h4 {
+            color: #66d9ef;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .avatars-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Avatares Duolingo Animados</h1>
+        <p class="subtitle">Versões masculina e feminina com animações fluidas</p>
+        
+        <div class="avatars-grid">
+            <div class="avatar-card">
+                <div class="avatar-display">
+                    <svg viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <style>
+                                @keyframes blink {
+                                    0%, 49%, 100% { opacity: 1; }
+                                    50%, 99% { opacity: 0; }
+                                }
+                                
+                                @keyframes float {
+                                    0%, 100% { transform: translateY(0px); }
+                                    50% { transform: translateY(-8px); }
+                                }
+                                
+                                @keyframes smile {
+                                    0%, 49%, 100% { d: path('M 85 130 Q 100 140 115 130'); }
+                                    50%, 99% { d: path('M 85 135 Q 100 145 115 135'); }
+                                }
+                                
+                                .avatar-container {
+                                    animation: float 3s ease-in-out infinite;
+                                }
+                                
+                                .eye-left, .eye-right {
+                                    animation: blink 4s ease-in-out infinite;
+                                }
+                                
+                                .mouth {
+                                    animation: smile 4s ease-in-out infinite;
+                                }
+                            </style>
+                        </defs>
+                        
+                        <g class="avatar-container">
+                            <!-- Body/Shirt -->
+                            <rect x="60" y="160" width="80" height="90" rx="15" fill="#0066FF" />
+                            
+                            <!-- Neck -->
+                            <rect x="85" y="145" width="30" height="20" fill="#F5C89A" />
+                            
+                            <!-- Head -->
+                            <rect x="55" y="60" width="90" height="95" rx="20" fill="#F5C89A" />
+                            
+                            <!-- Hair -->
+                            <path d="M 55 70 Q 50 50 70 40 Q 85 35 100 35 Q 115 35 130 40 Q 150 50 145 70 L 145 100 Q 140 110 130 115 L 70 115 Q 60 110 55 100 Z" fill="#4A3728" />
+                            
+                            <!-- Ears -->
+                            <circle cx="50" cy="100" r="12" fill="#F5C89A" />
+                            <circle cx="150" cy="100" r="12" fill="#F5C89A" />
+                            
+                            <!-- Eyes Background -->
+                            <rect x="70" y="85" width="18" height="22" rx="9" fill="#FFFFFF" />
+                            <rect x="112" y="85" width="18" height="22" rx="9" fill="#FFFFFF" />
+                            
+                            <!-- Eyes (blink animation) -->
+                            <g class="eye-left">
+                                <ellipse cx="79" cy="96" rx="6" ry="8" fill="#3D2817" />
+                            </g>
+                            <g class="eye-right">
+                                <ellipse cx="121" cy="96" rx="6" ry="8" fill="#3D2817" />
+                            </g>
+                            
+                            <!-- Nose -->
+                            <rect x="95" y="110" width="10" height="12" rx="5" fill="#F5A76A" />
+                            
+                            <!-- Mouth -->
+                            <path class="mouth" d="M 85 130 Q 100 140 115 130" stroke="#3D2817" stroke-width="3" fill="none" stroke-linecap="round" />
+                            
+                            <!-- Arms -->
+                            <rect x="45" y="170" width="15" height="50" rx="7" fill="#F5C89A" />
+                            <rect x="140" y="170" width="15" height="50" rx="7" fill="#F5C89A" />
+                            
+                            <!-- Hands -->
+                            <circle cx="52" cy="225" r="10" fill="#F5C89A" />
+                            <circle cx="148" cy="225" r="10" fill="#F5C89A" />
+                        </g>
+                    </svg>
+                </div>
+                <h2>Avatar Masculino</h2>
+            </div>
+            
+            <div class="avatar-card">
+                <div class="avatar-display">
+                    <svg viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <style>
+                                @keyframes blink {
+                                    0%, 49%, 100% { opacity: 1; }
+                                    50%, 99% { opacity: 0; }
+                                }
+                                
+                                @keyframes float {
+                                    0%, 100% { transform: translateY(0px); }
+                                    50% { transform: translateY(-8px); }
+                                }
+                                
+                                @keyframes smile {
+                                    0%, 49%, 100% { d: path('M 80 135 Q 100 148 120 135'); }
+                                    50%, 99% { d: path('M 80 140 Q 100 153 120 140'); }
+                                }
+                                
+                                .avatar-container {
+                                    animation: float 3s ease-in-out infinite;
+                                }
+                                
+                                .eye-left, .eye-right {
+                                    animation: blink 4s ease-in-out infinite;
+                                }
+                                
+                                .mouth {
+                                    animation: smile 4s ease-in-out infinite;
+                                }
+                            </style>
+                        </defs>
+                        
+                        <g class="avatar-container">
+                            <!-- Body/Shirt -->
+                            <ellipse cx="100" cy="180" rx="42" ry="55" fill="#D946EF" />
+                            
+                            <!-- Neck -->
+                            <rect x="85" y="145" width="30" height="20" fill="#F5C89A" />
+                            
+                            <!-- Head -->
+                            <rect x="50" y="50" width="100" height="105" rx="25" fill="#F5C89A" />
+                            
+                            <!-- Hair Back -->
+                            <path d="M 50 70 Q 35 60 35 90 Q 35 140 50 155 L 150 155 Q 165 140 165 90 Q 165 60 150 70 Z" fill="#4A3728" />
+                            
+                            <!-- Hair Front Left -->
+                            <path d="M 50 70 Q 40 80 45 120 L 60 120 Q 55 85 65 70 Z" fill="#4A3728" />
+                            
+                            <!-- Hair Front Right -->
+                            <path d="M 150 70 Q 160 80 155 120 L 140 120 Q 145 85 135 70 Z" fill="#4A3728" />
+                            
+                            <!-- Ears -->
+                            <circle cx="45" cy="105" r="13" fill="#F5C89A" />
+                            <circle cx="155" cy="105" r="13" fill="#F5C89A" />
+                            
+                            <!-- Eyes Background -->
+                            <ellipse cx="72" cy="90" rx="11" ry="15" fill="#FFFFFF" />
+                            <ellipse cx="128" cy="90" rx="11" ry="15" fill="#FFFFFF" />
+                            
+                            <!-- Eyes (blink animation) -->
+                            <g class="eye-left">
+                                <ellipse cx="72" cy="95" rx="7" ry="10" fill="#3D2817" />
+                            </g>
+                            <g class="eye-right">
+                                <ellipse cx="128" cy="95" rx="7" ry="10" fill="#3D2817" />
+                            </g>
+                            
+                            <!-- Eyebrows -->
+                            <path d="M 62 78 Q 72 75 82 78" stroke="#3D2817" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                            <path d="M 118 78 Q 128 75 138 78" stroke="#3D2817" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                            
+                            <!-- Nose -->
+                            <rect x="95" y="115" width="10" height="12" rx="5" fill="#F5A76A" />
+                            
+                            <!-- Mouth -->
+                            <path class="mouth" d="M 80 135 Q 100 148 120 135" stroke="#C1440E" stroke-width="3" fill="none" stroke-linecap="round" />
+                            
+                            <!-- Arms -->
+                            <rect x="40" y="175" width="16" height="55" rx="8" fill="#F5C89A" />
+                            <rect x="144" y="175" width="16" height="55" rx="8" fill="#F5C89A" />
+                            
+                            <!-- Hands -->
+                            <circle cx="48" cy="235" r="11" fill="#F5C89A" />
+                            <circle cx="152" cy="235" r="11" fill="#F5C89A" />
+                        </g>
+                    </svg>
+                </div>
+                <h2>Avatar Feminino</h2>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h3>✨ Características</h3>
+            <ul>
+                <li>Estilo Duolingo autêntico com formas geométricas simples</li>
+                <li>Animações fluidas: flutuação, piscar de olhos e movimento de boca</li>
+                <li>Totalmente responsivo e compatível com web</li>
+                <li>Formato SVG escalável sem perda de qualidade</li>
+                <li>Leve e otimizado para performance</li>
+                <li>Fácil de integrar em qualquer plataforma web</li>
+            </ul>
+        </div>
+        
+        <div class="code-section">
+            <h4>📝 Como usar nos seus arquivos HTML:</h4>
+            <pre>&lt;!-- Opção 1: Incluir o SVG diretamente --&gt;
+&lt;img src="avatar_male_animated.svg" alt="Avatar Masculino" width="200"&gt;
+
+&lt;!-- Opção 2: Usar como background em CSS --&gt;
+&lt;div style="background-image: url('avatar_female_animated.svg');"&gt;&lt;/div&gt;
+
+&lt;!-- Opção 3: Incorporar inline (para melhor controle de animação) --&gt;
+&lt;object data="avatar_male_animated.svg" type="image/svg+xml"&gt;&lt;/object&gt;</pre>
+        </div>
+    </div>
+</body>
+</html>

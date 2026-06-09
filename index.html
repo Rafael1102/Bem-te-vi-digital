@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="auth-page">
+    <div class="auth-overlay">
+        <div class="auth-card">
+            <div class="logo">Bem-te-vi Digital</div>
+            <div class="auth-logo-wrap">
+                <img src="avata/Bem-te-vi_jeday.jpeg" alt="Ícone Bem-te-vi">
+            </div>
+            <h2 id="auth-title">Criar Conta</h2>
+            
+            <form id="auth-form" onsubmit="handleAuth(event)">
+                
+                <div class="input-group" id="name-input-group">
+                    <label>Nome</label>
+                    <input type="text" id="name" required>
+                </div>
+                
+                <div class="input-group" id="gender-input-group">
+                    <label>Sou...</label>
+                    <div class="gender-options">
+                        <label class="gender-option">
+                            <img src="avata/avatar_male_clean.png" alt="Avatar Masculino">
+                            <input type="radio" name="gender" value="male" checked required> Homem
+                        </label>
+                        <label class="gender-option">
+                            <img src="avata/avatar_female_clean.png" alt="Avatar Feminino">
+                            <input type="radio" name="gender" value="female" required> Mulher
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="input-group">
+                    <label>Senha</label>
+                    <input type="password" required>
+                </div>
+                
+                <button type="submit" class="btn" id="auth-btn">Cadastrar</button>
+            </form>
+            
+            <p class="toggle-text">
+                <span id="toggle-msg">Já tem conta?</span> 
+                <a id="toggle-link" onclick="toggleAuthMode()" style="cursor: pointer;">Entrar</a>
+            </p>
+            
+        </div>
+    </div>
+    
+    <script src="js/global.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

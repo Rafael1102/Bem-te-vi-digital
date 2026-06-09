@@ -1,0 +1,86 @@
+<svg viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes blink {
+        0%, 49%, 100% { opacity: 1; }
+        50%, 99% { opacity: 0; }
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      
+      @keyframes smile {
+        0%, 49%, 100% { d: path('M 80 135 Q 100 148 120 135'); }
+        50%, 99% { d: path('M 80 140 Q 100 153 120 140'); }
+      }
+      
+      .avatar-container {
+        animation: float 3s ease-in-out infinite;
+      }
+      
+      .eye-left, .eye-right {
+        animation: blink 4s ease-in-out infinite;
+      }
+      
+      .mouth {
+        animation: smile 4s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+  
+  <g class="avatar-container">
+    <!-- Body/Shirt -->
+    <ellipse cx="100" cy="180" rx="42" ry="55" fill="#D946EF" />
+    
+    <!-- Neck -->
+    <rect x="85" y="145" width="30" height="20" fill="#F5C89A" />
+    
+    <!-- Head -->
+    <rect x="50" y="50" width="100" height="105" rx="25" fill="#F5C89A" />
+    
+    <!-- Hair Back -->
+    <path d="M 50 70 Q 35 60 35 90 Q 35 140 50 155 L 150 155 Q 165 140 165 90 Q 165 60 150 70 Z" fill="#4A3728" />
+    
+    <!-- Hair Front Left -->
+    <path d="M 50 70 Q 40 80 45 120 L 60 120 Q 55 85 65 70 Z" fill="#4A3728" />
+    
+    <!-- Hair Front Right -->
+    <path d="M 150 70 Q 160 80 155 120 L 140 120 Q 145 85 135 70 Z" fill="#4A3728" />
+    
+    <!-- Ears -->
+    <circle cx="45" cy="105" r="13" fill="#F5C89A" />
+    <circle cx="155" cy="105" r="13" fill="#F5C89A" />
+    
+    <!-- Eyes Background -->
+    <ellipse cx="72" cy="90" rx="11" ry="15" fill="#FFFFFF" />
+    <ellipse cx="128" cy="90" rx="11" ry="15" fill="#FFFFFF" />
+    
+    <!-- Eyes (blink animation) -->
+    <g class="eye-left">
+      <ellipse cx="72" cy="95" rx="7" ry="10" fill="#3D2817" />
+    </g>
+    <g class="eye-right">
+      <ellipse cx="128" cy="95" rx="7" ry="10" fill="#3D2817" />
+    </g>
+    
+    <!-- Eyebrows -->
+    <path d="M 62 78 Q 72 75 82 78" stroke="#3D2817" stroke-width="2.5" fill="none" stroke-linecap="round" />
+    <path d="M 118 78 Q 128 75 138 78" stroke="#3D2817" stroke-width="2.5" fill="none" stroke-linecap="round" />
+    
+    <!-- Nose -->
+    <rect x="95" y="115" width="10" height="12" rx="5" fill="#F5A76A" />
+    
+    <!-- Mouth -->
+    <path class="mouth" d="M 80 135 Q 100 148 120 135" stroke="#C1440E" stroke-width="3" fill="none" stroke-linecap="round" />
+    
+    <!-- Arms -->
+    <rect x="40" y="175" width="16" height="55" rx="8" fill="#F5C89A" />
+    <rect x="144" y="175" width="16" height="55" rx="8" fill="#F5C89A" />
+    
+    <!-- Hands -->
+    <circle cx="48" cy="235" r="11" fill="#F5C89A" />
+    <circle cx="152" cy="235" r="11" fill="#F5C89A" />
+  </g>
+</svg>

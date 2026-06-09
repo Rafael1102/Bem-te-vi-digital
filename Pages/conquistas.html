@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardião Digital - Conquistas</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="app-layout">
+    <div class="sidebar">
+        <div class="logo">🛡️ Guardião Digital</div>
+        <a href="trilha.html" class="nav-item">Trilha de Aprendizado</a>
+        <a href="conquistas.html" class="nav-item">Conquistas</a>
+        <a href="perfil.html" class="nav-item">Perfil</a>
+        <div class="sidebar-spacer"></div>
+        <a href="#" class="nav-item" onclick="logout()" style="color: #ff4d4d;">Sair</a>
+    </div>
+    <div class="main-content">
+        <div class="header-stats">⭐ XP: <span id="xp-counter">0</span></div>
+        <h2 class="page-title">Suas Conquistas</h2>
+        <div class="achievements-grid" id="achievements-list"></div>
+    </div>
+    <script src="../js/global.js"></script>
+    <script src="../js/conquistas.js"></script>
+</body>
+
+</html>

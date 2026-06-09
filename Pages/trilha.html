@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardião Digital - Trilha</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="app-layout">
+    <div class="sidebar">
+        <div class="logo">🛡️ Guardião Digital</div>
+        <a href="trilha.html" class="nav-item">Trilha de Aprendizado</a>
+        <a href="conquistas.html" class="nav-item">Conquistas</a>
+        <a href="perfil.html" class="nav-item">Perfil</a>
+        <div class="sidebar-spacer"></div>
+        <a href="#" class="nav-item" onclick="logout()" style="color: #ff4d4d;">Sair</a>
+    </div>
+    <div class="main-content">
+        <div class="header-stats">⭐ XP: <span id="xp-counter">0</span></div>
+        <div class="trail-container">
+            <div class="module-node" id="mod1" onclick="startLesson(1)">Mód. 1<div class="module-title">Fundamentos
+                </div>
+            </div>
+            <div class="module-node trail-offset-left locked" id="mod2" onclick="startLesson(2)">Mód. 2<div
+                    class="module-title">Senhas (2FA)</div>
+            </div>
+            <div class="module-node trail-offset-right locked" id="mod3" onclick="startLesson(3)">Mód. 3<div
+                    class="module-title">Redes e VPN</div>
+            </div>
+            <div class="module-node trail-offset-left locked" id="mod4" onclick="startLesson(4)">Mód. 4<div
+                    class="module-title">Prevenção</div>
+            </div>
+            <div class="module-node locked" id="mod5" onclick="startLesson(5)">Mód. 5<div
+                    class="module-title">Netiqueta</div>
+            </div>
+        </div>
+    </div>
+    <div class="lesson-modal" id="lessonModal">
+        <div class="lesson-content">
+            <h2 id="lessonTitle" style="color: var(--primary-blue);"></h2>
+            <div id="lessonDesc"></div><button class="btn" onclick="completeLesson()">Concluir Módulo (+15 XP)</button>
+        </div>
+    </div>
+    <script src="../js/global.js"></script>
+    <script src="../js/trilha.js"></script>
+</body>
+
+</html>

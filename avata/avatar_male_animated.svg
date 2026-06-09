@@ -1,0 +1,76 @@
+<svg viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes blink {
+        0%, 49%, 100% { opacity: 1; }
+        50%, 99% { opacity: 0; }
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      
+      @keyframes smile {
+        0%, 49%, 100% { d: path('M 85 130 Q 100 140 115 130'); }
+        50%, 99% { d: path('M 85 135 Q 100 145 115 135'); }
+      }
+      
+      .avatar-container {
+        animation: float 3s ease-in-out infinite;
+      }
+      
+      .eye-left, .eye-right {
+        animation: blink 4s ease-in-out infinite;
+      }
+      
+      .mouth {
+        animation: smile 4s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+  
+  <g class="avatar-container">
+    <!-- Body/Shirt -->
+    <rect x="60" y="160" width="80" height="90" rx="15" fill="#0066FF" />
+    
+    <!-- Neck -->
+    <rect x="85" y="145" width="30" height="20" fill="#F5C89A" />
+    
+    <!-- Head -->
+    <rect x="55" y="60" width="90" height="95" rx="20" fill="#F5C89A" />
+    
+    <!-- Hair -->
+    <path d="M 55 70 Q 50 50 70 40 Q 85 35 100 35 Q 115 35 130 40 Q 150 50 145 70 L 145 100 Q 140 110 130 115 L 70 115 Q 60 110 55 100 Z" fill="#4A3728" />
+    
+    <!-- Ears -->
+    <circle cx="50" cy="100" r="12" fill="#F5C89A" />
+    <circle cx="150" cy="100" r="12" fill="#F5C89A" />
+    
+    <!-- Eyes Background -->
+    <rect x="70" y="85" width="18" height="22" rx="9" fill="#FFFFFF" />
+    <rect x="112" y="85" width="18" height="22" rx="9" fill="#FFFFFF" />
+    
+    <!-- Eyes (blink animation) -->
+    <g class="eye-left">
+      <ellipse cx="79" cy="96" rx="6" ry="8" fill="#3D2817" />
+    </g>
+    <g class="eye-right">
+      <ellipse cx="121" cy="96" rx="6" ry="8" fill="#3D2817" />
+    </g>
+    
+    <!-- Nose -->
+    <rect x="95" y="110" width="10" height="12" rx="5" fill="#F5A76A" />
+    
+    <!-- Mouth -->
+    <path class="mouth" d="M 85 130 Q 100 140 115 130" stroke="#3D2817" stroke-width="3" fill="none" stroke-linecap="round" />
+    
+    <!-- Arms -->
+    <rect x="45" y="170" width="15" height="50" rx="7" fill="#F5C89A" />
+    <rect x="140" y="170" width="15" height="50" rx="7" fill="#F5C89A" />
+    
+    <!-- Hands -->
+    <circle cx="52" cy="225" r="10" fill="#F5C89A" />
+    <circle cx="148" cy="225" r="10" fill="#F5C89A" />
+  </g>
+</svg>
