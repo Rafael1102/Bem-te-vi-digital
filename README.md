@@ -2,7 +2,7 @@
 
 Uma plataforma educacional interativa e gamificada focada em ensinar os fundamentos da **Segurança Digital** para usuários de todas as idades. O sistema utiliza o carismático mascote "Bem-te-vi Digital" para guiar os alunos por uma trilha de aprendizado envolvente.
 
-🌐 **Acesse o projeto online:** [http://bemtevidigitalprotego.com/](http://bemtevidigitalprotego.com/)
+🌐 **Acesse o projeto online:** [http://bemtevidigitalprotego.com/](https://rafael1102.github.io/Bem-te-vi-digital/)
 
 ## 🎯 O que este sistema faz?
 
