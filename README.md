@@ -2,6 +2,8 @@
 
 Uma plataforma educacional interativa e gamificada focada em ensinar os fundamentos da **Segurança Digital** para usuários de todas as idades. O sistema utiliza o carismático mascote "Bem-te-vi Digital" para guiar os alunos por uma trilha de aprendizado envolvente.
 
+🌐 **Acesse o projeto online:** [http://bemtevidigitalprotego.com/](http://bemtevidigitalprotego.com/)
+
 ## 🎯 O que este sistema faz?
 
 O **Guardião Digital** tem como objetivo conscientizar e educar as pessoas sobre as melhores práticas de navegação segura, prevenção de golpes e cidadania digital. Através de uma interface amigável e gamificada, o sistema oferece:
